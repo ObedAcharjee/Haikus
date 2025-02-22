@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haikus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -103,6 +104,14 @@
                 font-size: 2.2em;
             }
         }
+
+        @media (max-width: 768px) and (orientation: portrait) {
+    body {
+        background: 
+            linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+            url('https://wallpapercave.com/wp/wp2406917.jpg') center/cover fixed;
+    }
+        }
     </style>
 </head>
 <body>
@@ -118,7 +127,7 @@
             <div class="gallery">
                 <!-- Replace with your haiku images -->
                 <div class="haiku-card">
-                    <h2>War</h3>
+                    <h2>War</h2>
                     <img src="https://preview.redd.it/does-anybody-know-where-i-can-find-good-post-apocalyptic-v0-igm6chxxzrid1.jpeg?auto=webp&s=3da2287ec05c137791e0ea727f834b4bf9024582" alt="Night Haiku" class="haiku-img">
                     <p class="haiku-caption">
                         I wake up distraught<br>
@@ -201,7 +210,7 @@
 
     <footer>
         <div class="container">
-            <p>All written by, Yours truly L.B</p>
+            <p>All haikus written by yours truly, L.B.</p>
         </div>
     </footer>
 </body>
