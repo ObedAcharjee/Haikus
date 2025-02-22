@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haikus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #e0e0e0;
+            line-height: 1.7;
+            background: 
+                linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('kyoukai.png') center/cover fixed;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 3.2em;
+            color: #f4f4f4;
+            text-shadow: 0 0 15px rgba(255,255,255,0.3);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .haiku-card {
+            background: rgba(20, 20, 20, 0.85);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .haiku-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .haiku-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .haiku-caption {
+            font-style: italic;
+            color: #d4d4d4;
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            margin-top: 80px;
+            color: #a0a0a0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Haikus</h1>
+            <p class="subtitle">Whispers in the Celestial Night</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="gallery">
+                <!-- Replace with your haiku images -->
+                <div class="haiku-card">
+                    <h2>War</h3>
+                    <img src="https://preview.redd.it/does-anybody-know-where-i-can-find-good-post-apocalyptic-v0-igm6chxxzrid1.jpeg?auto=webp&s=3da2287ec05c137791e0ea727f834b4bf9024582" alt="Night Haiku" class="haiku-img">
+                    <p class="haiku-caption">
+                        I wake up distraught<br>
+                        Death and Despair surrounds me<br>
+                        Peace seems out of reach
+                    </p>
+                </div>
+
+                <div class="haiku-card">
+                    <h2>Ayaka</h2>
+                    <img src="https://imgs.search.brave.com/nPF906wAipONPGJT03NPVuAC0gxzamaLqaZ22YTnL0c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXIuZm9yZnVu/LmNvbS9mZXRjaC9m/YS9mYWUwNTEyMWM3/MGNhMDhkMzQ4NDNi/ZjFmNmU4NTIyYi5q/cGVn" alt="Star Haiku" class="haiku-img">
+                    <p class="haiku-caption">
+                        Serene and Graceful<br>
+                        Is how i would describe her<br>
+                        An ethereal sight
+                    </p>
+                </div>
+
+                <div class="haiku-card">
+                    <h2>Regrets</h2>
+                    <img src="https://imgs.search.brave.com/_UPC1A6dadxWbcP_LCP_kbdeYy5Xz737ejiDbBmTxgc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMxLmNicmltYWdl/cy5jb20vd29yZHBy/ZXNzL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIyLzEwL1Rpa1Rv/ay1GYW1vdXMtQW5p/bWUtLS1Zb3VyLUxp/ZS1Jbi1BcHJpbC5q/cGc" alt="Darkness Haiku" class="haiku-img">
+                    <p class="haiku-caption">
+                        If only i could<br>
+                        Turn back time and push myself<br>
+                        To make her just mine
+                    </p>
+                </div>
+
+                <div class="haiku-card">
+                    <h2>Lone</h2>
+                    <img src="https://imgs.search.brave.com/Rp2cQQlWXLOAakKk3QJmQ7yk_QP3040J7M54Ai4bADY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMxLmNicmltYWdl/cy5jb20vd29yZHBy/ZXNzL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDE5LzA5L0thbmVr/aS1pbi1PcGVuaW5n/LVVucmF2ZWwuanBn" alt="Darkness Haiku" class="haiku-img">
+                    <p class="haiku-caption">
+                        A half of both Worlds<br>
+                        Bearing the pain of both sides<br>
+                        His life had been hell
+                    </p>
+                </div>
+
+                <div class="haiku-card">
+                    <h2>Selfless</h2>
+                    <img src="https://imgs.search.brave.com/irakgVeuQ44qL-_4pcmeaFT3ktZ46ssP0VzuJzgIi1E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDEwMTk3/ODEwLmpwZw" alt="Darkness Haiku" class="haiku-img">
+                    <p class="haiku-caption">
+                        He marches forward<br>
+                        At the expense of his life<br>
+                        All for his people
+                    </p>
+                </div>
+
+                <div class="haiku-card">
+                    <h2>Dazed</h2>
+                    <img src="haiku3.jpg" alt="Darkness Haiku" class="haiku-img">
+                    <p class="haiku-caption">
+                        Beneath the Night Sky<br>
+                        Wandering around the fields<br>
+                        She left me enthralled.
+                    </p>
+                </div>
+
+                <div class="haiku-card">
+                    <h2>Shylla</h2>
+                    <img src="haiku3.jpg" alt="Darkness Haiku" class="haiku-img">
+                    <p class="haiku-caption">
+                        Evening strolls with her<br>
+                        Jokes and Gossip, abundant<br>
+                        Memories I cherish.
+                    </p>
+                </div>
+
+                <div class="haiku-card">
+                    <img src="haiku3.jpg" alt="Darkness Haiku" class="haiku-img">
+                    <p class="haiku-caption">
+                        If only i could<br>
+                        Turn back time and push myself<br>
+                        To make her just mine
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>All written by, Yours truly L.B</p>
+        </div>
+    </footer>
+</body>
+</html>
