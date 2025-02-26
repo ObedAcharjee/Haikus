@@ -5,320 +5,304 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Haikus</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Georgia', serif;
-      color: #e0e0e0;
-      line-height: 1.7;
-      background: 
-        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-        url('kyoukai.png') center/cover fixed;
-      min-height: 100vh;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    
-    header {
-      text-align: center;
-      padding: 60px 0;
-      margin-bottom: 40px;
-    }
-    
-    h1 {
-      font-family: 'Cinzel Decorative', cursive;
-      font-size: 3.2em;
-      color: #f4f4f4;
-      text-shadow: 0 0 15px rgba(255,255,255,0.3);
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-    }
-    
-    h2 {
-      text-align: center;
-      cursor: pointer;
-      transition: opacity 0.8s ease, transform 0.8s ease;
-      position: relative;
-      display: inline-block;
-      color: #f4f4f4;
-    }
-    
-    /* Updated Sparkling Text Effect (subtler glow) */
-    @keyframes sparkle {
-      0% {
-        text-shadow: 
-          0 0 3px rgba(255,255,255,0.5),
-          0 0 6px rgba(255,255,255,0.5),
-          0 0 9px rgba(255,139,148,0.5),
-          0 0 12px rgba(255,139,148,0.5);
-      }
-      50% {
-        text-shadow: 
-          0 0 6px rgba(255,255,255,0.5),
-          0 0 10px rgba(255,255,255,0.5),
-          0 0 15px rgba(255,139,148,0.5),
-          0 0 20px rgba(255,139,148,0.5);
-      }
-      100% {
-        text-shadow: 
-          0 0 3px rgba(255,255,255,0.5),
-          0 0 6px rgba(255,255,255,0.5),
-          0 0 9px rgba(255,139,148,0.5),
-          0 0 12px rgba(255,139,148,0.5);
-      }
-    }
-    
-    .sparkle {
-      animation: sparkle 1.5s infinite;
-    }
-    
-    /* Fade Transition Classes */
-    .fade-out {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    
-    .fade-in {
-      opacity: 1;
-      transform: scale(1);
-    }
-    
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      padding: 20px;
-    }
-    
-    .haiku-card {
-      background: rgba(20, 20, 20, 0.85);
-      padding: 25px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.1);
-      backdrop-filter: blur(5px);
-      transition: transform 0.3s ease;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      text-align: center;
-    }
-    
-    .haiku-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(255,255,255,0.3);
-    }
-    
-    .haiku-img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 4px;
-      margin-bottom: 20px;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .haiku-caption {
-      font-style: italic;
-      color: #d4d4d4;
-      text-align: center;
-      font-size: 1.1em;
-      line-height: 1.8;
-      text-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-    
-    footer {
-      text-align: center;
-      padding: 40px;
-      margin-top: 80px;
-      color: #a0a0a0;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-        @media (max-width: 768px) {
-  body {
-    background: 
-      linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-      url(wp2406917.jpg) center/cover fixed;
-  }
-}
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Loading spinner -->
+  <div class="spinner" id="loading-spinner">
+    <div class="spinner-inner"></div>
+  </div>
+
   <header>
     <div class="container">
       <h1>Haikus</h1>
       <p class="subtitle">
-        Haiku is a type of short-form poetry that originated in Japan. Traditional Japanese haiku consists of three phrases composed of 17 syllables in a 5, 7, 5 pattern. There is more to Haikus than just adhering to the syllable count, However I have decided to take a different approach and base mine on feelings, emotions, or observations.
+        Haiku is a type of short-form poetry that originated in Japan. Traditional Japanese haiku consists of three phrases composed of 17 syllables in a 5, 7, 5 pattern.
+      </p>
+      <p class="subtitle">
+        There is more to Haikus than just adhering to the syllable count; however, I have decided to take a different approach and base mine on feelings, emotions, or observations.
+      </p>
+      <p class="subtitle note">
+        Tap on the images to download the haiku as an img file.
       </p>
     </div>
   </header>
+
       
   <main>
     <div class="container">
-        <div class="gallery">
-            <!-- Replace with your haiku images -->
-            <div class="haiku-card">
-                <h2>War</h2>
-                <img src="https://preview.redd.it/does-anybody-know-where-i-can-find-good-post-apocalyptic-v0-igm6chxxzrid1.jpeg?auto=webp&s=3da2287ec05c137791e0ea727f834b4bf9024582" alt="Night Haiku" class="haiku-img">
-                <p class="haiku-caption">
-                    I wake up distraught<br>
-                    Death and Despair surrounds me<br>
-                    Peace seems out of reach
-                </p>
-            </div>
-
-            <div class="haiku-card">
-                <h2>Ayaka</h2>
-                <img src="https://imgs.search.brave.com/nPF906wAipONPGJT03NPVuAC0gxzamaLqaZ22YTnL0c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXIuZm9yZnVu/LmNvbS9mZXRjaC9m/YS9mYWUwNTEyMWM3/MGNhMDhkMzQ4NDNi/ZjFmNmU4NTIyYi5q/cGVn" alt="Star Haiku" class="haiku-img">
-                <p class="haiku-caption">
-                    Serene and Graceful<br>
-                    Is how i would describe her<br>
-                    An ethereal sight
-                </p>
-            </div>
-
-            <div class="haiku-card">
-                <h2>Regrets</h2>
-                <img src="https://imgs.search.brave.com/_UPC1A6dadxWbcP_LCP_kbdeYy5Xz737ejiDbBmTxgc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMxLmNicmltYWdl/cy5jb20vd29yZHBy/ZXNzL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIyLzEwL1Rpa1Rv/ay1GYW1vdXMtQW5p/bWUtLS1Zb3VyLUxp/ZS1Jbi1BcHJpbC5q/cGc" alt="Darkness Haiku" class="haiku-img">
-                <p class="haiku-caption">
-                    If only i could<br>
-                    Turn back time and push myself<br>
-                    To make her just mine
-                </p>
-            </div>
-
-            <div class="haiku-card">
-                <h2>Lone</h2>
-                <img src="https://imgs.search.brave.com/Rp2cQQlWXLOAakKk3QJmQ7yk_QP3040J7M54Ai4bADY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMxLmNicmltYWdl/cy5jb20vd29yZHBy/ZXNzL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDE5LzA5L0thbmVr/aS1pbi1PcGVuaW5n/LVVucmF2ZWwuanBn" alt="Darkness Haiku" class="haiku-img">
-                <p class="haiku-caption">
-                    A half of both Worlds<br>
-                    Bearing the pain of both sides<br>
-                    His life had been hell
-                </p>
-            </div>
-
-            <div class="haiku-card">
-                <h2>Selfless</h2>
-                <img src="https://imgs.search.brave.com/irakgVeuQ44qL-_4pcmeaFT3ktZ46ssP0VzuJzgIi1E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDEwMTk3/ODEwLmpwZw" alt="Darkness Haiku" class="haiku-img">
-                <p class="haiku-caption">
-                    He marches forward<br>
-                    At the expense of his life<br>
-                    All for his people
-                </p>
-            </div>
-
-            <div class="haiku-card">
-                <h2>Dazed</h2>
-                <img src="https://i.postimg.cc/Y9cmr4RK/suzume.png" alt="Darkness Haiku" class="haiku-img">
-                <p class="haiku-caption">
-                    Beneath the Night Sky<br>
-                    Wandering around the fields<br>
-                    She left me enthralled.
-                </p>
-            </div>
-
-            <div class="haiku-card">
-                <!-- Clicking toggles the text; when it becomes "Shylla", the sparkle animation is applied. -->
-                <h2 id="text" onclick="changeText()">Twilight Bonds</h2>
-                <img src="https://i.postimg.cc/SR8TNCk8/sad-boi2.jpg" alt="Darkness Haiku" class="haiku-img">
-                <p class="haiku-caption">
-                  Evening strolls with her<br>
-                  Jokes and Gossip, abundant<br>
-                  Memories I cherish.
-                </p>
-            </div>
-
-            <div class="haiku-card">
-                <h2>Control</h2>
-                <img src="https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/makima_finger_tent.png" alt="Darkness Haiku" class="haiku-img">
-                <p class="haiku-caption">
-                    Your days are numbered<br>
-                    She whispers softly to me<br>
-                    No hint of malice
-                </p>
-            </div>
-
-            <div class="haiku-card">
-                <h2>Frieren</h2>
-                <img src="https://i.postimg.cc/59Spr19N/frieren-2.png" alt="Darkness Haiku" class="haiku-img">
-                <p class="haiku-caption">
-                    Curse or a Blessing<br>
-                    this life of mine, ample time<br>
-                    but lone i wander...
-                </p>
-            </div>
-
-            <div class="haiku-card">
-                <h2>Contrast</h2>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFuyLyiVMHYoW8FML60cQUhCcqVSJD-Co8xqoDv-ppsG8YcQQi8Ftr3Ag&s=10" alt="Darkness Haiku" class="haiku-img" style="object-position: right center;">
-                <p class="haiku-caption">
-                    Conflicting views<br>
-                    Polar opposites and yet<br>
-                    still together
-                </p>
-            </div>
-            
-            <div class="haiku-card">
-                <h2>Joyboy</h2>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ6mo1CpckrbXI1diRllmypc1H0rSMfi2MMw&usqp=CAU" alt="Darkness Haiku" class="haiku-img">
-                <p class="haiku-caption">
-                    Times changed, so did friends<br>
-                    But you always stayed the same<br>
-                    So bright and cheerful
-                </p>
-            </div>
-
-            <div class="haiku-card">
-                <h2>Evolve</h2>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh6o-tpvsOTQsN0Pmn4FK0AfnF7430xJFMuw&usqp=CAU" alt="Darkness Haiku" class="haiku-img" style="object-position: right;">
-                <p class="haiku-caption">
-                    Will you stay the same?<br>
-                    Or go beyond your limits<br>
-                    And alter your fate.
-                </p>
-            </div>
-          
-            <div class="haiku-card">
-              <h2>Guilt</h2>
-              <img src="https://w0.peakpx.com/wallpaper/750/732/HD-wallpaper-death-of-thors-manga-thorfinn-vinland-saga.jpg" alt="Darkness Haiku" class="haiku-img" style="object-position: bottom;">
-              <p class="haiku-caption">
-                  "If only i had<br>
-                   Heed your words back then, Father<br>
-                   Would you still be here?"
-              </p>
+      <div class="gallery">
+        <!-- Original Haiku Cards -->
+        <div class="haiku-card">
+          <h2>War</h2>
+          <div class="image-container">
+            <img src="https://preview.redd.it/does-anybody-know-where-i-can-find-good-post-apocalyptic-v0-igm6chxxzrid1.jpeg?auto=webp&s=3da2287ec05c137791e0ea727f834b4bf9024582" alt="Night Haiku" class="haiku-img">
+            <button class="download-btn" data-title="War">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
           </div>
-          
-          <div class="haiku-card">
-              <h2>Gojo Satoru</h2>
-              <img src="https://i.postimg.cc/htxs1V9C/Screenshot-2025-02-25-23-08-49-76-010925bd39fdc4bfa0e99fa1d4c2b790.jpg" alt="Darkness Haiku" class="haiku-img" style="object-position: bottom;">
-              <p class="haiku-caption">
-                  This title of mine.<br>
-                  "The Strongest", is what they say.<br>
-                  Worthless in the end.
-              </p>
-          </div>
-
-            <div class="haiku-card">
-            <h2>False</h2>
-            <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/09/erwins-suicide-charge.jpg?q=50&fit=crop&w=825&dpr=1.5" alt="Darkness Haiku" class="haiku-img">
-            <p class="haiku-caption">
-                As I charged forward<br>
-                Amidst it all I wondered<br>
-                "Is this what i wanted?"
-            </p>
-          </div>
-          </div>
+          <p class="haiku-caption">
+            I wake up distraught<br>
+            Death and Despair surrounds me<br>
+            Peace seems out of reach
+          </p>
         </div>
-    </main>
-  
 
+        <div class="haiku-card">
+          <h2>Ayaka</h2>
+          <div class="image-container">
+            <img src="https://imgs.search.brave.com/nPF906wAipONPGJT03NPVuAC0gxzamaLqaZ22YTnL0c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXIuZm9yZnVu/LmNvbS9mZXRjaC9m/YS9mYWUwNTEyMWM3/MGNhMDhkMzQ4NDNi/ZjFmNmU4NTIyYi5q/cGVn" alt="Star Haiku" class="haiku-img">
+            <button class="download-btn" data-title="Ayaka">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+          <p class="haiku-caption">
+            Serene and Graceful<br>
+            Is how i would describe her<br>
+            An ethereal sight
+          </p>
+        </div>
+
+        <div class="haiku-card">
+          <h2>Regrets</h2>
+          <div class="image-container">
+            <img src="https://imgs.search.brave.com/_UPC1A6dadxWbcP_LCP_kbdeYy5Xz737ejiDbBmTxgc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMxLmNicmltYWdl/cy5jb20vd29yZHBy/ZXNzL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIyLzEwL1Rpa1Rv/ay1GYW1vdXMtQW5p/bWUtLS1Zb3VyLUxp/ZS1Jbi1BcHJpbC5q/cGc" alt="Darkness Haiku" class="haiku-img">
+            <button class="download-btn" data-title="Regrets">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+          <p class="haiku-caption">
+            If only i could<br>
+            Turn back time and push myself<br>
+            To make her just mine
+          </p>
+        </div>
+
+        <div class="haiku-card">
+          <h2>Lone</h2>
+          <div class="image-container">
+            <img src="https://imgs.search.brave.com/Rp2cQQlWXLOAakKk3QJmQ7yk_QP3040J7M54Ai4bADY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMxLmNicmltYWdl/cy5jb20vd29yZHBy/ZXNzL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDE5LzA5L0thbmVr/aS1pbi1PcGVuaW5n/LVVucmF2ZWwuanBn" alt="Darkness Haiku" class="haiku-img">
+            <button class="download-btn" data-title="Lone">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+          <p class="haiku-caption">
+            A half of both Worlds<br>
+            Bearing the pain of both sides<br>
+            His life had been hell
+          </p>
+        </div>
+
+        <!-- Integrated Haiku Cards -->
+        <div class="haiku-card">
+          <h2>Selfless</h2>
+          <div class="image-container">
+            <img src="https://imgs.search.brave.com/irakgVeuQ44qL-_4pcmeaFT3ktZ46ssP0VzuJzgIi1E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDEwMTk3/ODEwLmpwZw" alt="Darkness Haiku" class="haiku-img">
+            <button class="download-btn" data-title="Selfless">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+          <p class="haiku-caption">
+            He marches forward<br>
+            At the expense of his life<br>
+            All for his people
+          </p>
+        </div>
+
+        <div class="haiku-card">
+          <h2>Dazed</h2>
+          <div class="image-container">
+            <img src="https://i.postimg.cc/Y9cmr4RK/suzume.png" alt="Darkness Haiku" class="haiku-img">
+            <button class="download-btn" data-title="Dazed">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+          <p class="haiku-caption">
+            Beneath the Night Sky<br>
+            Wandering around the fields<br>
+            She left me enthralled.
+          </p>
+        </div>
+
+        <div class="haiku-card">
+          <!-- Clicking toggles the text; when it becomes "Shylla", the sparkle animation is applied. -->
+          <h2 id="text" onclick="changeText()">Twilight Bonds</h2>
+          <div class="image-container">
+            <img src="https://i.postimg.cc/SR8TNCk8/sad-boi2.jpg" alt="Darkness Haiku" class="haiku-img">
+            <button class="download-btn" data-title="Twilight Bonds">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+          <p class="haiku-caption">
+            Evening strolls with her<br>
+            Jokes and Gossip, abundant<br>
+            Memories I cherish.
+          </p>
+        </div>
+
+        <div class="haiku-card">
+          <h2>Control</h2>
+          <div class="image-container">
+            <img src="https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/makima_finger_tent.png" alt="Darkness Haiku" class="haiku-img">
+            <button class="download-btn" data-title="Control">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+          <p class="haiku-caption">
+            Your days are numbered<br>
+            She whispers softly to me<br>
+            No hint of malice
+          </p>
+        </div>
+
+        <div class="haiku-card">
+          <h2>Frieren</h2>
+          <div class="image-container">
+            <img src="https://i.postimg.cc/59Spr19N/frieren-2.png" alt="Darkness Haiku" class="haiku-img">
+            <button class="download-btn" data-title="Frieren">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+          <p class="haiku-caption">
+            Curse or a Blessing<br>
+            this life of mine, ample time<br>
+            but lone i wander...
+          </p>
+        </div>
+
+        <div class="haiku-card">
+          <h2>Contrast</h2>
+          <div class="image-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFuyLyiVMHYoW8FML60cQUhCcqVSJD-Co8xqoDv-ppsG8YcQQi8Ftr3Ag&s=10" alt="Darkness Haiku" class="haiku-img" style="object-position: right center;">
+            <button class="download-btn" data-title="Contrast">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+          <p class="haiku-caption">
+            Conflicting views<br>
+            Polar opposites and yet<br>
+            still together
+          </p>
+        </div>
+
+        <div class="haiku-card">
+          <h2>Joyboy</h2>
+          <div class="image-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ6mo1CpckrbXI1diRllmypc1H0rSMfi2MMw&usqp=CAU" alt="Darkness Haiku" class="haiku-img">
+            <button class="download-btn" data-title="Joyboy">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+          <p class="haiku-caption">
+            Times changed, so did friends<br>
+            But you always stayed the same<br>
+            So bright and cheerful
+          </p>
+        </div>
+
+        <div class="haiku-card">
+          <h2>Guilt</h2>
+          <div class="image-container">
+            <img src="https://w0.peakpx.com/wallpaper/750/732/HD-wallpaper-death-of-thors-manga-thorfinn-vinland-saga.jpg" alt="Darkness Haiku" class="haiku-img" style="object-position: bottom;">
+            <button class="download-btn" data-title="Guilt">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+          <p class="haiku-caption">
+            "If only i had<br>
+             Heed your words back then, Father<br>
+             Would you still be here?"
+          </p>
+        </div>
+
+        <div class="haiku-card">
+          <h2>Gojo Satoru</h2>
+          <div class="image-container">
+            <img src="https://i.postimg.cc/htxs1V9C/Screenshot-2025-02-25-23-08-49-76-010925bd39fdc4bfa0e99fa1d4c2b790.jpg" alt="Darkness Haiku" class="haiku-img" style="object-position: bottom;">
+            <button class="download-btn" data-title="Gojo Satoru">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+          <p class="haiku-caption">
+            This title of mine.<br>
+            "The Strongest", is what they say.<br>
+            Worthless in the end.
+          </p>
+        </div>
+
+        <div class="haiku-card">
+          <h2>False</h2>
+          <div class="image-container">
+            <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/09/erwins-suicide-charge.jpg?q=50&fit=crop&w=825&dpr=1.5" alt="Darkness Haiku" class="haiku-img">
+            <button class="download-btn" data-title="False">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+          </div>
+          <p class="haiku-caption">
+            As I charged forward<br>
+            Amidst it all I wondered<br>
+            "Is this what i wanted"
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
   
   <footer>
     <div class="container">
@@ -326,31 +310,10 @@
     </div>
   </footer>
   
-  <script>
-    function changeText() {
-      let title = document.getElementById("text");
-      
-      // Apply fade-out effect (800ms)
-      title.classList.add("fade-out");
-      
-      setTimeout(() => {
-        // Toggle text and apply sparkle if it becomes "Shylla"
-        if (title.innerText === "Twilight Bonds") {
-          title.innerText = "✨Shylla✨";
-          title.classList.add("sparkle");
-        } else {
-          title.innerText = "Twilight Bonds";
-          title.classList.remove("sparkle");
-        }
-        title.classList.remove("fade-out");
-        title.classList.add("fade-in");
-      }, 800);
-      
-      // Remove the fade-in class after the transition
-      setTimeout(() => {
-        title.classList.remove("fade-in");
-      }, 1600);
-    }
-  </script>
+  <!-- External Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image-more/3.1.3/dom-to-image-more.min.js"></script>
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
 </body>
 </html>
