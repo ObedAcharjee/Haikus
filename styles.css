@@ -38,6 +38,14 @@
     margin: 0 auto;
     padding: 20px;
   }
+
+.haiku-card h2 {
+  display: block;
+  margin: 0;
+  padding: 5px 0;
+  text-align: center;
+}
+
   
   header {
     text-align: center;
