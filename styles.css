@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Georgia', serif;
+    color: #e0e0e0;
+    line-height: 1.7;
+    background: 
+      linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+      url('kyoukai.png') center/cover fixed;
+    min-height: 100vh;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0.5em 0;
+    padding: 0 10px;
+  }
+  
+  .subtitle.note {
+    font-weight: bold;
+    margin-top: 1em;
+  }
+  
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .subtitle {
+      font-size: 1rem;
+    }
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    padding: 60px 0;
+    margin-bottom: 40px;
+  }
+  
+  h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 3.2em;
+    color: #f4f4f4;
+    text-shadow: 0 0 15px rgba(255,255,255,0.3);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+  
+  h2 {
+    text-align: center;
+    cursor: pointer;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    position: relative;
+    display: inline-block;
+    color: #f4f4f4;
+  }
+  
+  /* Updated Sparkling Text Effect (subtler glow) */
+  @keyframes sparkle {
+    0% {
+      text-shadow: 
+        0 0 3px rgba(255,255,255,0.5),
+        0 0 6px rgba(255,255,255,0.5),
+        0 0 9px rgba(255,139,148,0.5),
+        0 0 12px rgba(255,139,148,0.5);
+    }
+    50% {
+      text-shadow: 
+        0 0 6px rgba(255,255,255,0.5),
+        0 0 10px rgba(255,255,255,0.5),
+        0 0 15px rgba(255,139,148,0.5),
+        0 0 20px rgba(255,139,148,0.5);
+    }
+    100% {
+      text-shadow: 
+        0 0 3px rgba(255,255,255,0.5),
+        0 0 6px rgba(255,255,255,0.5),
+        0 0 9px rgba(255,139,148,0.5),
+        0 0 12px rgba(255,139,148,0.5);
+    }
+  }
+  
+  .sparkle {
+    animation: sparkle 1.5s infinite;
+  }
+  
+  /* Fade Transition Classes */
+  .fade-out {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  
+  .fade-in {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+  }
+  
+  .haiku-card {
+    background: rgba(20, 20, 20, 0.85);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    text-align: center;
+    position: relative;
+  }
+  
+  .haiku-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,255,255,0.3);
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden;
+  }
+  
+  .haiku-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .download-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+  }
+  
+  .image-container:hover .download-btn {
+    opacity: 1;
+  }
+  
+  .download-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .haiku-caption {
+    font-style: italic;
+    color: #d4d4d4;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.8;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 40px;
+    margin-top: 80px;
+    color: #a0a0a0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      background: 
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url(wp2406917.jpg) center/cover fixed;
+    }
+  }
+  
+  /* Custom positioning for specific images */
+  .object-position-right {
+    object-position: right center;
+  }
+  
+  .object-position-bottom {
+    object-position: bottom;
+  }
+  
+  /* Loading spinner styles */
+  .spinner {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .spinner-inner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
